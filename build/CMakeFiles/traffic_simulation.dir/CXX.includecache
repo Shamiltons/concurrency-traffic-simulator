@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/shane/Desktop/TrafficSimulator/concurrency-traffic-simulator/src/TrafficLight.cpp
+iostream
+-
+random
+-
+TrafficLight.h
+/home/shane/Desktop/TrafficSimulator/concurrency-traffic-simulator/src/TrafficLight.h
+future
+-
+thread
+-
+chrono
+-
+
+/home/shane/Desktop/TrafficSimulator/concurrency-traffic-simulator/src/TrafficLight.h
+mutex
+-
+deque
+-
+condition_variable
+-
+TrafficObject.h
+/home/shane/Desktop/TrafficSimulator/concurrency-traffic-simulator/src/TrafficObject.h
+
+/home/shane/Desktop/TrafficSimulator/concurrency-traffic-simulator/src/TrafficObject.h
+vector
+-
+thread
+-
+mutex
+-
+

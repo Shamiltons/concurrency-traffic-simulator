@@ -17,8 +17,8 @@ T MessageQueue<T>::receive()
     std::unique_lock<std::mutex> lock(_mutex);
     _condition.wait(lock, [this]{ return !_queue.empty();});
 
-    T msg = std::move(_queue.front());
-    _queue.pop_front();
+    T msg = std::move(_queue.back());
+    _queue.pop_back();
     return msg;
 }
 
@@ -87,9 +87,9 @@ void TrafficLight::cycleThroughPhases()
         int deltaTime = Seconds.count();
         if(deltaTime >= cycleTime){
             _currentPhase = _currentPhase == red ? green: red;
-            auto sentFuture = std::async(std::launch::async, &MessageQueue<TrafficLightPhase>::send, &_queue, std::move(_currentPhase));
-            sentFuture.wait();
-            cycleTime = distribution(generated);
+            _queue.send(std::move(_currentPhase));
+           
+            
             timeStamp = std::chrono::system_clock::now();
         }
 
