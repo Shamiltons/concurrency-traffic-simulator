@@ -9,7 +9,7 @@
 #include "Vehicle.h"
 
 /* Implementation of class "WaitingVehicles" */
-std::mutex TrafficObject::_mtx;
+
 
 int WaitingVehicles::getSize()
 {

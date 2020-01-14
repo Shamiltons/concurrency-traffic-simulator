@@ -40,30 +40,34 @@ enum TrafficLightPhase
 
 };
 
-class TrafficLight :TrafficObject
+class TrafficLight : TrafficObject
 {
 public:
     // constructor / desctructor
     TrafficLight();
 
-    // getters / setters
-    TrafficLightPhase getCurrentPhase();
+  
 
     // typical behaviour methods
     void waitForGreen();
     void simulate();
 
+      // getters / setters
+    TrafficLightPhase getCurrentPhase();
+
 private:
     // typical behaviour methods
-    void cycleThroughPhases();
-    TrafficLightPhase _currentPhase;
-    MessageQueue<TrafficLight> _queue;
+
     // FP.4b : create a private member of type MessageQueue for messages of type TrafficLightPhase 
     // and use it within the infinite loop to push each new TrafficLightPhase into it by calling 
     // send in conjunction with move semantics.
-
+    void cycleThroughPhases();
     std::condition_variable _condition;
     std::mutex _mutex;
+    TrafficLightPhase _currentPhase;
+    MessageQueue<TrafficLightPhase> _queue;
+
+   
 };
 
 #endif
