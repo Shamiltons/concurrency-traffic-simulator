@@ -1,3 +1,0 @@
-/home/shane/Desktop/TrafficSimulator/concurrency-traffic-simulator/build/CMakeFiles/rebuild_cache.dir
-/home/shane/Desktop/TrafficSimulator/concurrency-traffic-simulator/build/CMakeFiles/traffic_simulation.dir
-/home/shane/Desktop/TrafficSimulator/concurrency-traffic-simulator/build/CMakeFiles/edit_cache.dir
